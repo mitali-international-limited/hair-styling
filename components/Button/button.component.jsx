@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const Button = ({props}) => {
+const Button = ({ btnText }) => {
   return (
-    <button
-    className={`px-4 py-2 items-center rounded-lg hover:bg-white/50 hover:text-white bg-white/20 text-white/50 hover:shadow-xl transition-all`}
-  >
-    {props}
-  </button>
-);
-}
+    <div className={`text-center relative`}>
+      <button className="inline-block max-w-[90%] min-w-[150px] bg-[#f9eae3] text-black text-[16px] leading-[1em] text-center py-2">
+        {btnText}
+      </button>
+    </div>
+  );
+};
 
-export default Button
+export default Button;

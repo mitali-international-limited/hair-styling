@@ -1,124 +1,100 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import {
+  MdAccountCircle,
+  MdFavoriteBorder,
+  MdOutlineShoppingBag,
+} from "react-icons/md";
 
-import styles from '../../styles/Home.module.css';
-import { FaMobile, FaRocketchat } from 'react-icons/fa';
-import { FiMessageSquare } from 'react-icons/fi';
-import { MdAccountCircle, MdOutlineShoppingBag } from 'react-icons/md';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-import { logo } from '../../assets/logo.png';
+import { dropdown } from "@/utils/Menu";
+import Dropdown from "../dropDown/dropdown";
 
 const Header = () => {
-  return (
-    <div className="md:w-full md:h-[160px]">
-      {/* 1st heading */}
-      <div className="bg-slate-600 text-white/75 md:px-[4rem] px-[4px] md:h-[37%] md:w-full">
-        <div className="md:flex md:justify-between md:items-center md:pt-[10px]">
-          <div className="md:font-semibold font-sm">
-            <p>FREE SHIPPING ON ORDERS $99+</p>
-          </div>
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const [dropdownContent, setDropdownContent] = useState(null);
 
-          {/* search bar  */}
-          <div className="basis-1/5 md:basis-2/5">
-            <div class="relative">
+  const handleDropdown = (submenu) => {
+    if (submenu.children) {
+      setDropdownContent(submenu);
+      setOpenDropdown(!openDropdown);
+    }
+  };
+  return (
+    <div className="w-full">
+      {/* 1st heading */}
+      <div className="bg-black text-white md:px-[4rem] px-[4px]w-full uppercase py-2 text-sm flex">
+        <p className="text-center !max-w-full flex-1 text-sm">
+          DEMO PARA LA SECCIÓN DE OFERTA
+        </p>
+        <p className="w-[30px]">
+          <img src="/images/download (3).jpg" alt="" />
+        </p>
+      </div>
+      {/* 2nd heading  */}
+      <div className="md:px-[4rem] px-[4px] bg-[#f9eae3] w-full flex items-center py-2">
+        <div className="flex items-center w-full">
+          <div className="w-[30%]">
+            <div class="search-box">
+              <button class="btn-search">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </button>
               <input
                 type="text"
-                class="md:w-full w-[50%] px-3 py-2 border border-white/30 rounded-lg bg-black/50 focus:outline-none focus:outline-white/50"
-                placeholder="Search"
+                class="input-search"
+                placeholder="Type to Search..."
               />
-              <button class="absolute right-0 top-0 mt-3 mr-2">
-                <svg
-                  class="w-4 h-4 fill-current text-gray-200"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
-                </svg>
-              </button>
             </div>
           </div>
-
-          <div className="flex space-x-4">
-            <p className="flex space-x-1 justify-center items-center cursor-pointer">
-              <FaMobile className="text-white/75" />
-              <span>Call 880 1234 567 89</span>
-            </p>
-            <p className="flex space-x-2 justify-center items-center cursor-pointer">
-              <FaRocketchat className="text-white/75" />
-              <span>Chat</span>
-            </p>
-            <p className="flex space-x-1 justify-center items-center cursor-pointer">
-              <FiMessageSquare className="text-white/75" />
-              <span> Contacts</span>
-            </p>
+          <div className="flex-1 flex justify-center">
+            <h2 className="text-4xl font-bold italic">
+              <span>L</span>
+              <span>A</span>
+              <span> </span>
+              <span>F</span>
+              <span>A</span>
+              <span>M</span>
+              <span>A</span>
+              <span>I</span>
+              <span>N</span>
+              <span>E</span>
+            </h2>
           </div>
-        </div>
-      </div>
-
-      {/* 2nd heading  */}
-      <div className="px-[4rem] bg-black h-[63%] w-full">
-        <div className="flex justify-between items-center pt-3">
-          <div className="header-logo">
-            <button className="logo-box">
-              <img
-                className="h-[70px] w-[80px]"
-                src="https://www.bellamiprofessional.com/cdn/shop/t/54/assets/logo.png?v=36085246456418662171671034665"
-                alt="logo"
-              />
-            </button>
-          </div>
-          <nav className="header-nav flex justify-center content-center items-center">
-            <ul className="flex justify-center items-center font-semibold text-lg text-white/50">
-              <Link
-                href="#"
-                className="px-4 py-2 hover:underline hover:text-white"
-              >
-                THE HAIR
-              </Link>
-              <Link
-                href="#"
-                className="px-4 py-2 hover:underline hover:text-white"
-              >
-                THE COLORS
-              </Link>
-              <Link
-                href="#"
-                className="px-4 py-2 hover:underline hover:text-white"
-              >
-                THE ACCESSORIES
-              </Link>
-              <Link
-                href="#"
-                className="px-4 py-2 hover:underline hover:text-white"
-              >
-                THE BELLAMIS AWARDS
-              </Link>
-              <Link
-                href="#"
-                className="px-4 py-2 hover:underline hover:text-white"
-              >
-                EDUCATION
-              </Link>
-              <Link
-                href="#"
-                className="px-4 py-2 hover:underline hover:text-white"
-              >
-                CONTACT
-              </Link>
-            </ul>
-          </nav>
-
-          <div className="header-account text-white/50 gap-4 flex justify-around">
-            <button className="text-4xl hover:text-white">
+          <div className=" text-black gap-4 flex-end flex justify-end w-[30%]">
+            <button className="text-xl hover:text-red-400">
               <MdAccountCircle />
             </button>
-            <button className="text-4xl hover:text-white">
+            <button className="text-xl hover:text-red-400">
               <MdOutlineShoppingBag />
+            </button>
+            <button className="text-xl hover:text-red-400 ">
+              <MdFavoriteBorder />
             </button>
           </div>
         </div>
       </div>
+
+      <div className="bg-black text-white md:px-[4rem] px-[4px] py-3 md:w-full">
+        <div className="flex items-center justify-around h-full text-[12px] uppercase">
+          {dropdown.map((menu, idx) => {
+            console.log("menu:", menu.name);
+            return (
+              <div
+                key={idx}
+                className="md:font-[500]  h-full flex items-center px-3 text-[#f9eae3]"
+              >
+                <p onClick={() => handleDropdown(menu)}>{menu.name}</p>
+                {menu.children ? <FiChevronDown /> : null}
+              </div>
+            );
+          })}
+
+          {/* search bar  */}
+        </div>
+      </div>
+      <Dropdown openDropdown={openDropdown} dropdownContent={dropdownContent} />
     </div>
   );
 };

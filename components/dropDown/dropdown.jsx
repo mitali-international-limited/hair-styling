@@ -1,44 +1,38 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Dropdown = ({ openDropdown, dropdownContent }) => {
   return (
-    <div className="relative">
-      <button
-        onClick={toggleDropdown}
-        className="px-4 py-2 text-white bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-      >
-        Menu
-      </button>
+    <>
+      {openDropdown ? (
+        <div className="absolute w-[85vw] h-[75vh] flex bg-[#f9eae3] left-1/2 transform -translate-x-1/2 z-30">
+          <div className="w-3/4 flex justify-between px-10 py-5 gap-5">
+            {dropdownContent.children.map((submenu, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className="w-full flex flex-col justify-start font-mono"
+                >
+                  <h1 className="font-bold ">{submenu.name}</h1>
 
-      {isOpen && (
-        <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-lg">
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-          >
-            Option 1
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-          >
-            Option 2
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-          >
-            Option 3
-          </a>
+                  <ul className="pt-3">
+                    {submenu.children.map((option, idx) => {
+                      return <li key={idx}>{option}</li>;
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+          <div className="w-[35%] p-2">
+            <img
+              src="/images/unnamed_540x.webp"
+              alt=""
+              className="w-full h-full"
+            />
+          </div>
         </div>
-      )}
-    </div>
+      ) : null}
+    </>
   );
 };
 

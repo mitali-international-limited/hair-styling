@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 // import { GrNext, GrPrevious } from "react-icons/gr";
-import { AiOutlineVerticalLeft, AiOutlineVerticalRight } from 'react-icons/ai';
+import { AiOutlineVerticalLeft, AiOutlineVerticalRight } from "react-icons/ai";
 
 const featuredProducts = [
-  './images/banner/1.webp',
-  './images/banner/2.webp',
-  './images/banner/3.webp',
-  './images/banner/4.webp',
-  './images/banner/5.webp',
-  './images/banner/6.webp',
-  './images/banner/7.jpg',
-  './images/banner/8.webp',
+  "./images/banner/1.webp",
+  "./images/banner/2.webp",
+  "./images/banner/3.webp",
+  "./images/banner/4.webp",
+  "./images/banner/5.webp",
+  "./images/banner/6.webp",
+  "./images/banner/7.jpg",
+  "./images/banner/8.webp",
 ];
 
 let count = 0;
@@ -21,13 +21,13 @@ export default function Slider() {
   const slideRef = useRef();
 
   const removeAnimation = () => {
-    slideRef.current.classList.remove('fade-anim');
+    slideRef.current.classList.remove("fade-anim");
   };
 
   useEffect(() => {
-    slideRef.current.addEventListener('animationend', removeAnimation);
-    slideRef.current.addEventListener('mouseenter', pauseSlider);
-    slideRef.current.addEventListener('mouseleave', startSlider);
+    slideRef.current.addEventListener("animationend", removeAnimation);
+    slideRef.current.addEventListener("mouseenter", pauseSlider);
+    slideRef.current.addEventListener("mouseleave", startSlider);
 
     startSlider();
     return () => {
@@ -48,17 +48,17 @@ export default function Slider() {
   const handleOnNextClick = () => {
     count = (count + 1) % featuredProducts.length;
     setCurrentIndex(count);
-    slideRef.current.classList.add('fade-anim');
+    slideRef.current.classList.add("fade-anim");
   };
   const handleOnPrevClick = () => {
     const productsLength = featuredProducts.length;
     count = (currentIndex + productsLength - 1) % productsLength;
     setCurrentIndex(count);
-    slideRef.current.classList.add('fade-anim');
+    slideRef.current.classList.add("fade-anim");
   };
 
   return (
-    <div ref={slideRef} className="bg-black select-none relative">
+    <div ref={slideRef} className="bg-white select-none relative">
       <div className="">
         <img
           className="relative w-full h-auto px-16 py-4 flex justify-center items-center"
