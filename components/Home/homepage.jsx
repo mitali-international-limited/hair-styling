@@ -12,6 +12,7 @@ import Account from "../Account/account";
 import Dropdown from "../dropDown/dropdown";
 import Hero from "./partials/Hero";
 import BestStyles from "./partials/BestStyles";
+import About from "./partials/About";
 
 import { hairExtension } from "@/utils/Extension";
 import Collection from "./partials/Collection";
@@ -21,19 +22,18 @@ const Homepage = () => {
   return (
     <div className="h-full w-full grid  grid-col overflow-hidden bg-[#f9eae3]">
       {/* <Dropdown /> */}
-      <Header />
+
       {/**<HeroSlider />  */}
       <Hero />
       <BestStyles data={hairExtension} />
       <Collection data={hairExtension} />
       <DiscoverForYou data={hairExtension} />
-      <Banner />
+      <About />
+      {/* <ContactBanner />  <Banner />
       <Categories />
       <Account />
-      <TradingProducts />
-      {/* <ContactBanner /> */}
+      <TradingProducts />*/}
       <OfferBanner />
-      <Footer />
     </div>
   );
 };

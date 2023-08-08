@@ -1,56 +1,83 @@
-import React from 'react';
+import React from "react";
 
 const OfferBanner = () => {
   return (
-    <section className=" px-10 py-10 flex justify-between items-center bg-black">
-      <div className="flex justify-center items-center basis-1/5 gap-3">
-        <div className="w-14">
-          <img src="https://cdn11.bigcommerce.com/s-rihs34rpvk/product_images/uploaded_images/shipping-img.png" />
+    <section className="bg-white py-5">
+      <h2 className="font-MyFont tracking-[2px] uppercase text-center my-10 font-bold text-[24px]">
+        #1 HAIR EXTENSION BRAND WORLDWIDE
+      </h2>
+      <div className="grid grid-cols-4 gap-5 mx-[5rem] place-content-center">
+        <div className="flex flex-col items-center">
+          <div className="w-[30%]">
+            <img
+              src="/images/shipping/free-shipping.svg"
+              alt="Free shipping"
+              className="w-full h-full"
+            />
+          </div>
+          <div className="pt-5">
+            <h3 className="text-[13px] font-bold font-MyFont text-center">
+              FAST, FREE, WORLDWIDE SHIPPING
+            </h3>
+            <p className="text-[9pt] text-center font-mono pt-3">
+              ALL orders Tk‌20,300+ ship free! We love instant gratification, so
+              orders placed before 12:00 PM PST (MON-FRI) ship the same day.
+            </p>
+          </div>
         </div>
-        <div className="no-wrap">
-          <p>
-            <strong className="text-rose-700">Free Shipping</strong>
-            <br />
-            <span className="text-white/50">on all Orders $99+</span>
-          </p>
+        <div className="flex flex-col items-center">
+          <div className="w-[28%]">
+            <img
+              src="/images/shipping/great-pricing.svg"
+              alt="Free shipping"
+              className="w-full h-full"
+            />
+          </div>
+          <div className="pt-5">
+            <h3 className="text-[13px] font-bold font-MyFont text-center">
+              SUPERIOR QUALITY
+            </h3>
+            <p className="text-[9pt] text-center font-mono pt-3">
+              Our 100% Remy human hair extensions can be washed, blow dried,
+              flat ironed, or curled using hot tools — just like your own hair!
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="flex justify-center items-center basis-1/5 gap-3">
-        <div className="w-12">
-          <img src="https://cdn11.bigcommerce.com/s-rihs34rpvk/product_images/uploaded_images/friendly-img.png" />
+        <div className="flex flex-col items-center">
+          <div className="w-[30%] ">
+            <img
+              src="/images/shipping/preimum-quality.svg"
+              alt="Free shipping"
+              className="w-full h-full"
+            />
+          </div>
+          <div className="pt-5">
+            <h3 className="text-[13px] font-bold font-MyFont text-center">
+              UNBEATABLE CUSTOMER SERVICE
+            </h3>
+            <p className="text-[9pt] text-center font-mono pt-3">
+              We only uses the world’s most trustworthy and respected payment
+              processors so you can shop with peace of mind.
+            </p>
+          </div>
         </div>
-        <div className="">
-          <p>
-            <strong className="text-rose-700">Friendly, Fast</strong>
-            <br />
-            <span className="text-white/50">Customer Support</span>
-          </p>
-        </div>
-      </div>
-      <div className="flex justify-center items-center basis-2/6 gap-3">
-        <div className="w-12">
-          <img src="https://cdn11.bigcommerce.com/s-rihs34rpvk/product_images/uploaded_images/secure-img.png" />
-        </div>
-        <div className="">
-          <p>
-            <strong className="text-rose-700">Secure Payments</strong>
-            <br />
-            <span className="text-white/50">
-              Your Information is Safe & Secure
-            </span>
-          </p>
-        </div>
-      </div>
-      <div className="flex justify-center items-center basis-1/4 gap-3">
-        <div className="w-12">
-          <img src="https://cdn11.bigcommerce.com/s-rihs34rpvk/product_images/uploaded_images/inventory-img.png" />
-        </div>
-        <div className="">
-          <p>
-            <strong className="text-rose-700">Largest Online Inventory</strong>
-            <br />
-            <span className="text-white/50">of Medical Supplies</span>
-          </p>
+        <div className="flex flex-col items-center">
+          <div className="w-[20%]">
+            <img
+              src="/images/shipping/secure-shipping.svg"
+              alt="Free shipping"
+              className="w-full h-full"
+            />
+          </div>
+          <div className="pt-5">
+            <h3 className="text-[13px] font-bold font-MyFont text-center">
+              SECURE SHOPPING
+            </h3>
+            <p className="text-[9pt] text-center font-mono pt-3">
+              Our color match team can help you choose from 40+ colors to make
+              sure your extensions blend perfectly.
+            </p>
+          </div>
         </div>
       </div>
     </section>

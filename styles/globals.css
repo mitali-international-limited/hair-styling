@@ -49,11 +49,6 @@
   border-radius: 50%;
   /* background-color: rgb(148 163 184 / var(--tw-bg-opacity)); */
 }
-.footer-container {
-  height: 75vh;
-  width: 100%;
-  background-color: #171c24;
-}
 
 .search-box {
   width: fit-content;

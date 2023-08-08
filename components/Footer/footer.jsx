@@ -1,112 +1,151 @@
-import React from 'react';
+import React from "react";
+import BtnClassic from "../Button/BtnClassic";
+import {
+  FaCcAmex,
+  FaCcDiscover,
+  FaCcMastercard,
+  FaCcPaypal,
+  FaCcVisa,
+  FaFacebook,
+  FaInstagram,
+  FaPinterest,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <section className="footer-container">
-      <div className="grid grid-cols-2 paddingLeftRight pt-16 h-3/4">
-        <div className="">
-          <h3 className="text-white/80">About</h3>
-          <p className="text-small text-white/50">
-            With one of the largest catalogs of medical, surgical, and
-            diagnostic supplies available online, Medex Supply can provide your
-            facility with all the medical equipment necessary to ensure a
-            healthy, safe, and sterile environment. Our extensive selection, low
-            prices, fast shipping, and friendly, knowledgeable customer service
-            makes Medex Supply a #1 favorite with universities, hospitals,
-            doctors, nurses, schools, laboratories, government agencies, and
-            more.
-          </p>
+    <section className="w-full bg-black">
+      <div className="grid grid-cols-3 mx-[5rem] py-8 gap-8 text-white">
+        <div className="text-white">
+          <h3 className="font-bold uppercase">Stay In Touch</h3>
+          <div className="pt-8">
+            <p className="text-[8pt] font-mono">
+              Sign up to be the first to know about La Famaine product releases
+              and exclusive promotions.
+            </p>
+            <form action="#" className="pt-5">
+              <input
+                type="email"
+                id="email"
+                class="bg-gray-50 border border-rose-500 focus:outline-none focus:border-blue-300 text-gray-900 text-sm  block w-full p-2.5 "
+                placeholder="Email Address"
+                required
+              ></input>
+              <div className="pt-5">
+                <BtnClassic
+                  btnText={"Sign Me Up"}
+                  btnWidth={"!w-full !text-[22px] !uppercase !font-bold"}
+                />
+              </div>
+            </form>
+            <p className="text-[8pt] font-mono pt-5">
+              By signing up, you agree to receive Beauty Industry Group and its
+              Affiliated Entities offers, promotions and other commercial
+              messages. You are also agreeing to Beauty Industry Group and its
+              Affiliated Entities conditions of use, Privacy Policy and Terms of
+              Conditions. You may unsubscribe at any time.
+            </p>
+            <ul className="flex gap-5 justify-center pt-5">
+              <li>
+                <FaInstagram />
+              </li>
+              <li>
+                <FaPinterest />
+              </li>
+              <li>
+                <FaYoutube />
+              </li>
+              <li>
+                <FaFacebook />
+              </li>
+              <li>
+                <FaTwitter />
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <div>
-            <h3 className="text-white/80">Company</h3>
-            <ul className="text-white/50 leading-8">
-              <li className="hover:text-white hover:underline">
-                <a href="#">About Us</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Authorized Dealer</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Return Policy</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Shipping Policy</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Customer Feedback</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white/80">Account</h3>
-            <ul className="text-white/50 leading-8">
-              <li className="hover:text-white hover:underline">
-                <a href="#">Sign In</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Register</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Order Status</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Re Order</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Affiliates Program</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white/80">Contact</h3>
-            <ul className="text-white/50 leading-8">
-              <li className="hover:text-white hover:underline">
-                <a href="#">Chat With Us</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Contact Us</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">abc@gmail.com</a>
-              </li>
-              <li className="hover:text-white">
-                <a href="#">+880 1234 2343 23</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-white/80">Forms</h3>
-            <ul className="text-white/50 leading-8">
-              <li className="hover:text-white hover:underline">
-                <a href="#">Credit Application</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Print Order Form</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Suggestions</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Healthcare</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Government</a>
-              </li>
-              <li className="hover:text-white hover:underline">
-                <a href="#">Tax Exempt</a>
-              </li>
-            </ul>
-          </div>
+        <div className="pl-10">
+          <h3 className="text-white font-bold uppercase">Company</h3>
+          <ul className="pt-8 leading-6 text-[13px]">
+            <li className="hover:text-white hover:underline">
+              <a href="#">About Us</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Contact Us</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Terms of Service</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Return & Exchange Policy</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Shipping Policy</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Customer Feedback</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Shipping & Delivery</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Payments & Pricing</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Refund policy</a>
+            </li>
+          </ul>
+        </div>
+        <div className="">
+          <h3 className="text-white font-bold uppercase">Help</h3>
+          <ul className="pt-8 leading-6 text-[13px]">
+            <li className="hover:text-white hover:underline">
+              <a href="#">Fitting your clip-ins</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Wholesale Inquiry</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Affiliates</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">U.S. Returns Portal</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">International Returns Portal</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">International Customer Help Center</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">International Order Tracking</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Promotional Details</a>
+            </li>
+            <li className="hover:text-white hover:underline">
+              <a href="#">Giveaway Terms & Conditions</a>
+            </li>
+          </ul>
         </div>
       </div>
       <hr />
-      <div className="py-12">
-        <div class="container text-center mx-0 my-auto text-white/80">
-          All rights reserved &copy; 2023
+      <div className=" mx-[5rem]">
+        <div class="flex justify-between text-white w-full py-4">
+          <p className="text-[15px]">
+            © Copyright 2023, La Famaine| All Rights Reserved
+          </p>
+          <p className="text-white flex gap-5 text-[25px]">
+            <FaCcAmex />
+            <FaCcDiscover />
+            <FaCcMastercard />
+            <FaCcPaypal />
+            <FaCcVisa />
+          </p>
         </div>
       </div>
     </section>

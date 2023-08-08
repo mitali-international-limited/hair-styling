@@ -12,6 +12,8 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { dropdown } from "@/utils/Menu";
 import Dropdown from "../dropDown/dropdown";
 
+import Link from "next/link";
+
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [dropdownContent, setDropdownContent] = useState(null);
@@ -49,23 +51,28 @@ const Header = () => {
             </div>
           </div>
           <div className="flex-1 flex justify-center">
-            <h2 className="text-4xl font-bold italic">
-              <span>L</span>
-              <span>A</span>
-              <span> </span>
-              <span>F</span>
-              <span>A</span>
-              <span>M</span>
-              <span>A</span>
-              <span>I</span>
-              <span>N</span>
-              <span>E</span>
-            </h2>
+            <Link href="/">
+              <h2 className="text-4xl font-bold italic cursor-pointer">
+                <span>L</span>
+                <span>A</span>
+                <span> </span>
+                <span>F</span>
+                <span>A</span>
+                <span>M</span>
+                <span>A</span>
+                <span>I</span>
+                <span>N</span>
+                <span>E</span>
+              </h2>
+            </Link>
           </div>
           <div className=" text-black gap-4 flex-end flex justify-end w-[30%]">
-            <button className="text-xl hover:text-red-400">
-              <MdAccountCircle />
-            </button>
+            <Link href="/auth/signin">
+              <button className="text-xl hover:text-red-400">
+                <MdAccountCircle />
+              </button>
+            </Link>
+
             <button className="text-xl hover:text-red-400">
               <MdOutlineShoppingBag />
             </button>
