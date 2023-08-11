@@ -1,13 +1,11 @@
 import React from "react";
-import Button from "../Button/button.component";
 import BtnClassic from "../Button/BtnClassic";
 
 const DiscoverCard = ({ item }) => {
-  console.log("Item: ", item);
   return (
-    <div className="w-1/4 ">
-      <div className="px-5">
-        <img src={item.image[1]} alt="" className="w-full" />
+    <div className="w-full ">
+      <div className="px-5 h-[175px]">
+        <img src={item.image[1]} alt="" className="w-full h-full" />
       </div>
       <h2 className="text-[15px] font-mono tracking-tighter leading-5 font-semibold pt-5 text-center">
         {item.name}

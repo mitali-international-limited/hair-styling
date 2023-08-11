@@ -15,6 +15,7 @@ module.exports = {
       },
       fontFamily: {
         MyFont: ["MyFont", "sans-serif"],
+        Proxima: ["Proxima", "sans-serif"],
       },
     },
   },

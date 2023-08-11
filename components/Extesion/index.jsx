@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import ExCard from "../Ex-Card";
 
 const Extension = ({ title, data }) => {
@@ -10,8 +10,11 @@ const Extension = ({ title, data }) => {
       </h3>
       <div className="flex gap-3 mx-2 md:mx-[4rem] flex-nowrap overflow-x-scroll custom-scrollbar py-5">
         {data.items.map((item, idx) => {
-          console.log("Items: ", item);
-          return <ExCard item={item} key={idx} />;
+          return (
+            <Link key={idx} href={`/products/${encodeURIComponent(item.name)}`}>
+              <ExCard item={item} key={idx} />
+            </Link>
+          );
         })}
       </div>
     </div>

@@ -13,6 +13,7 @@ import { dropdown } from "@/utils/Menu";
 import Dropdown from "../dropDown/dropdown";
 
 import Link from "next/link";
+import { FaList } from "react-icons/fa";
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -27,7 +28,7 @@ const Header = () => {
   return (
     <div className="w-full">
       {/* 1st heading */}
-      <div className="bg-black text-white md:px-[4rem] px-[4px]w-full uppercase py-2 text-sm flex">
+      <div className="bg-black text-white md:px-[4rem] px-[4px] w-full uppercase py-2 text-sm flex">
         <p className="text-center !max-w-full flex-1 text-sm">
           DEMO PARA LA SECCIÓN DE OFERTA
         </p>
@@ -36,9 +37,9 @@ const Header = () => {
         </p>
       </div>
       {/* 2nd heading  */}
-      <div className="md:px-[4rem] px-[4px] bg-[#f9eae3] w-full flex items-center py-2">
-        <div className="flex items-center w-full">
-          <div className="w-[30%]">
+      <div className="md:px-[4rem]  bg-[#f9eae3] w-full flex items-center pt-4 md:py-2">
+        <div className="flex flex-col md:flex-row items-center w-full">
+          <div className="w-full md:w-[30%] order-1 md:order-0">
             <div class="search-box">
               <button class="btn-search">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -50,40 +51,43 @@ const Header = () => {
               />
             </div>
           </div>
-          <div className="flex-1 flex justify-center">
-            <Link href="/">
-              <h2 className="text-4xl font-bold italic cursor-pointer">
-                <span>L</span>
-                <span>A</span>
-                <span> </span>
-                <span>F</span>
-                <span>A</span>
-                <span>M</span>
-                <span>A</span>
-                <span>I</span>
-                <span>N</span>
-                <span>E</span>
-              </h2>
-            </Link>
-          </div>
-          <div className=" text-black gap-4 flex-end flex justify-end w-[30%]">
-            <Link href="/auth/signin">
-              <button className="text-xl hover:text-red-400">
-                <MdAccountCircle />
-              </button>
-            </Link>
-
-            <button className="text-xl hover:text-red-400">
-              <MdOutlineShoppingBag />
-            </button>
-            <button className="text-xl hover:text-red-400 ">
-              <MdFavoriteBorder />
-            </button>
+          <div className="px-[4px] md:px-0 pb-4 md:pb-0 flex justify-between items-center w-full order-0 md:order-1">
+            <div className="md:hidden">
+              <FaList />
+            </div>
+            <div className="md:flex-1 flex justify-center">
+              <Link href="/">
+                <h2 className="text-2xl md:text-4xl font-bold italic cursor-pointer">
+                  <span>L</span>
+                  <span>A</span>
+                  <span> </span>
+                  <span>F</span>
+                  <span>A</span>
+                  <span>M</span>
+                  <span>A</span>
+                  <span>I</span>
+                  <span>N</span>
+                  <span>E</span>
+                </h2>
+              </Link>
+            </div>
+            <div className=" text-black gap-4 flex-end flex justify-end w-[30%] items-center">
+              <Link href="/auth/signin">
+                <button className="text-xl hover:text-red-400">
+                  <MdAccountCircle />
+                </button>
+              </Link>
+              <Link href="/cart">
+                <button className="text-xl hover:text-red-400">
+                  <MdOutlineShoppingBag />
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="bg-black text-white md:px-[4rem] px-[4px] py-3 md:w-full">
+      {/** menu */}
+      <div className="hidden md:block bg-black text-white md:px-[4rem] px-[4px] py-3 md:w-full">
         <div className="flex items-center justify-around h-full text-[12px] uppercase">
           {dropdown.map((menu, idx) => {
             console.log("menu:", menu.name);

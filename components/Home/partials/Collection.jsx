@@ -1,6 +1,7 @@
 import React from "react";
 import BtnWhite from "@/components/BtnWhite";
 import CollectionCard from "@/components/CollectionCard";
+import Link from "next/link";
 
 const Collection = ({ data }) => {
   console.log("Data of Collection: ", data);
@@ -11,7 +12,14 @@ const Collection = ({ data }) => {
       </h2>
       <div className=" grid md:grid-cols-3 gap-4 mx-2 md:mx-[5rem]">
         {data.map((item, idx) => {
-          return <CollectionCard key={idx} item={item} />;
+          return (
+            <Link
+              key={idx}
+              href={`/collections/${encodeURIComponent(item.name)}`}
+            >
+              <CollectionCard item={item} />
+            </Link>
+          );
         })}
       </div>
     </div>

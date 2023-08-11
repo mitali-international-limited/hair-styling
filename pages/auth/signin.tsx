@@ -7,7 +7,7 @@ const SignIn = () => {
   return (
     <div className="w-full overflow-hidden bg-[#f9eae3] px-[5rem]">
       <div className="mx-auto md:max-w-[75%] ">
-        <h2 className="text-center py-10 text-[2.28571em] font-bold">
+        <h2 className="font-MyFont tracking-[2px] uppercase text-center py-10 text-[2.28571em] font-bold">
           Sign In
         </h2>
         <div className="w-full max-w-[500px] mx-auto pb-10">
