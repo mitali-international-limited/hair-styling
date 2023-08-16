@@ -1,9 +1,36 @@
 import Button from "@/components/BtnWhite";
 import BtnClassic from "@/components/Button/BtnClassic";
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
+import { RootState } from "@/service/store";
+
+import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/service/store";
+
+import { signInUser } from "@/service/reducers/userSlice";
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleSignIn = async (event: any) => {
+    event.preventDefault();
+    const user = {
+      email: email,
+      password: password,
+    };
+    try {
+      const action = await dispatch(signInUser(user));
+      router.push("/");
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  };
+
   return (
     <div className="w-full overflow-hidden bg-[#f9eae3] px-[5rem]">
       <div className="mx-auto md:max-w-[75%] ">
@@ -11,7 +38,7 @@ const SignIn = () => {
           Sign In
         </h2>
         <div className="w-full max-w-[500px] mx-auto pb-10">
-          <form action="#">
+          <form onSubmit={handleSignIn}>
             <div>
               <label
                 htmlFor="email"
@@ -24,6 +51,8 @@ const SignIn = () => {
                 id="Email"
                 className="bg-gray-50 border border-rose-500 focus:outline-none focus:border-blue-300 text-gray-900 text-sm  block w-full p-2.5 "
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="pt-3">
@@ -38,6 +67,8 @@ const SignIn = () => {
                 id="password"
                 className="bg-gray-50 border border-rose-500 focus:outline-none focus:border-blue-300 text-gray-900 text-sm  block w-full p-2.5 "
                 required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <p className="text-center pt-5 text-[10pt] font-semibold">

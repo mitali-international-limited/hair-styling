@@ -204,7 +204,7 @@ export const hairExtension = [
     ],
   },
   {
-    name: "Hair Accessories",
+    name: "Hair Care",
     icons:
       "https://www.bellamihair.com/cdn/shop/products/nylon-all-1_1024x1024.png?v=1606490087",
     items: [

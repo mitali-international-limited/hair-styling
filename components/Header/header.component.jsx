@@ -15,14 +15,27 @@ import Dropdown from "../dropDown/dropdown";
 import Link from "next/link";
 import { FaList } from "react-icons/fa";
 
+import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [dropdownContent, setDropdownContent] = useState(null);
+  const router = useRouter();
+
+  const user = useSelector((state) => state.user);
 
   const handleDropdown = (submenu) => {
     if (submenu.children) {
       setDropdownContent(submenu);
       setOpenDropdown(!openDropdown);
+    }
+  };
+  const handleAccount = () => {
+    if (localStorage.getItem("token")) {
+      router.push("/auth/account");
+    } else {
+      router.push("/auth/signin");
     }
   };
   return (
@@ -72,11 +85,11 @@ const Header = () => {
               </Link>
             </div>
             <div className=" text-black gap-4 flex-end flex justify-end w-[30%] items-center">
-              <Link href="/auth/signin">
+              <div onClick={handleAccount}>
                 <button className="text-xl hover:text-red-400">
                   <MdAccountCircle />
                 </button>
-              </Link>
+              </div>
               <Link href="/cart">
                 <button className="text-xl hover:text-red-400">
                   <MdOutlineShoppingBag />
