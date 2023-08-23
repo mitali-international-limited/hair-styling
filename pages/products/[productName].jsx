@@ -29,8 +29,6 @@ const Products = () => {
 
   const dispatch = useDispatch();
 
-  console.log("ProductName: ", productName);
-
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
