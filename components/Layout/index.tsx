@@ -4,7 +4,12 @@ import Head from "next/head";
 import Header from "../Header/header.component";
 import Footer from "../Footer/footer";
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+  showHeaderFooter: boolean;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, showHeaderFooter }) => {
   return (
     <div>
       <Head>
@@ -17,9 +22,9 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/honeyhut logo.png" />
       </Head>
       <main className="min-h-screen max-w-[1992px] mx-auto">
-        <Header />
+        {showHeaderFooter && <Header />}
         {children}
-        <Footer />
+        {showHeaderFooter && <Footer />}
       </main>
     </div>
   );

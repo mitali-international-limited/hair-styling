@@ -25,7 +25,8 @@
     "**/*.tsx",
     "pages/auth/signup.tsx",
     "pages/auth/signup.tsx",
-    "pages/auth/account.jsx"
+    "pages/auth/account.jsx",
+    "components/AddressForm/index.tsx"
   ],
   "exclude": ["node_modules"]
 }

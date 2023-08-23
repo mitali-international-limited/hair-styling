@@ -12,6 +12,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -69,16 +70,16 @@ const Footer = () => {
           <h3 className="text-white font-bold uppercase">Company</h3>
           <ul className="pt-8 leading-6 text-[13px]">
             <li className="hover:text-white hover:underline">
-              <a href="#">About Us</a>
+              <Link href="/about">About Us</Link>
             </li>
             <li className="hover:text-white hover:underline">
-              <a href="#">Contact Us</a>
+              <Link href="/contact">Contact Us</Link>
             </li>
             <li className="hover:text-white hover:underline">
-              <a href="#">Privacy Policy</a>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
             <li className="hover:text-white hover:underline">
-              <a href="#">Terms of Service</a>
+              <Link href="/terms&conditions">Terms of Service</Link>
             </li>
             <li className="hover:text-white hover:underline">
               <a href="#">Return & Exchange Policy</a>

@@ -3,8 +3,9 @@ import { RiStarFill, RiStarHalfFill } from "react-icons/ri";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import BtnOutline from "../../../components/BtnOutline";
+import Link from "next/link";
 
-const ProductInfo = () => {
+const ProductInfo = ({ addToCart, count, setCount }) => {
   return (
     <div>
       <h2 className="font-MyFont tracking-[1px]  text-center pb-3 font-bold text-[20px]">
@@ -180,23 +181,31 @@ const ProductInfo = () => {
             <div className="flex pt-5 items-center gap-2">
               <p>Quantity: </p>
               <div className="flex border rounded-md justify-center items-center">
-                <button className="px-2 py-2">
+                <button
+                  className="px-2 py-2"
+                  onClick={(e) => setCount(count > 1 ? count - 1 : count)}
+                >
                   <IoIosArrowDown />
                 </button>
 
-                <p className="px-10 py-2">1</p>
-                <button className="px-2 py-2">
+                <p className="px-10 py-2">{count}</p>
+                <button
+                  className="px-2 py-2"
+                  onClick={(e) => setCount(count + 1)}
+                >
                   <IoIosArrowUp />
                 </button>
               </div>
             </div>
             <p className="py-3 font-black text-[20px]">TK 21000</p>
           </div>
-          <div className="w-full py-3">
-            <BtnOutline
-              btnText={"Add Item to cart"}
-              btnClass={"w-[90%] !border-2"}
-            />
+          <div className="w-full py-3" onClick={addToCart}>
+            <Link href={"/cart"}>
+              <BtnOutline
+                btnText={"Add Item to cart"}
+                btnClass={"w-[90%] !border-2"}
+              />
+            </Link>
           </div>
         </div>
       </div>

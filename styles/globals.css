@@ -198,3 +198,6 @@
 .star-black {
   color: black;
 }
+.custom-tfoot {
+  margin-top: 1rem; /* Adjust as needed */
+}

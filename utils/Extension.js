@@ -14,7 +14,7 @@ export const hairExtension = [
         size: '26"',
       },
       {
-        name: 'PICCOLINA 120G 18" ASH BLONDE (80) HAIR EXTENSIONS',
+        name: 'BELLAMI SILK SEAM 260G 24" ROOTED COOL BROWN (17/P10/16/60) HAIR EXTENSIONS',
         price: "196.99",
         image: [
           "../images/extension/silk/24.webp",
