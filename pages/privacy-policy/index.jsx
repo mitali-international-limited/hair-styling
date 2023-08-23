@@ -6,6 +6,7 @@ const PrivacyPolicy = () => {
       <h2 className="font-MyFont tracking-[2px] uppercase text-center my-10 font-bold text-[24px]">
         Terms and Conditions
       </h2>
+      <div>Empty</div>
     </div>
   );
 };
