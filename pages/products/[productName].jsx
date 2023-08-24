@@ -33,7 +33,7 @@ const Products = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  const product = products.products.find((product) => {
+  const product = hairExtension.find((product) => {
     return product.name === productName;
   });
   console.log("Products  by url: ", product);
